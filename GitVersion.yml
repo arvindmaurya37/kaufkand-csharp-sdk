@@ -9,19 +9,19 @@ branches:
     increment: Patch
     prevent-increment:
       of-merged-branch: true
-    tag: ''
+    label: ''
 
   feature:
     regex: ^feature(s)?[/-]
     increment: Minor
-    tag: alpha
+    label: alpha
 
   hotfix:
     regex: ^hotfix(es)?[/-]
     increment: Patch
-    tag: beta
+    label: beta
 
   pull-request:
     regex: ^(pull|pr)[/-]
     increment: Patch
-    tag: pr
+    label: pr
