@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kaufland.SellerApi.Core\Kaufland.SellerApi.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Kaufland.SellerApi.Extensions.DependencyInjection" />
+    <InternalsVisibleTo Include="Kaufland.SellerApi.Tests" />
+    <InternalsVisibleTo Include="Kaufland.SellerApi.IntegrationTests" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
