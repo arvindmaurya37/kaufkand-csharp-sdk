@@ -1,4 +1,10 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="dotnet-tools.json" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/Kaufland.SellerApi.Core/Kaufland.SellerApi.Core.csproj" />
     <Project Path="src/Kaufland.SellerApi.Extensions.DependencyInjection/Kaufland.SellerApi.Extensions.DependencyInjection.csproj" />
