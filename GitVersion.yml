@@ -7,7 +7,7 @@ branches:
   main:
     regex: ^main$
     increment: Patch
-    revent-increment:
+    prevent-increment:
       of-merged-branch: true
     tag: ''
 
