@@ -6,7 +6,21 @@
 
 A modern, robust, and strongly-typed C# wrapper for the **Kaufland Seller API**. Designed from the ground up for .NET 8, this SDK provides an elegant interface to interact with Kaufland's marketplace functionalities natively without depending on heavy third-party core libraries.
 
-> **Disclaimer**: This is a community-driven, open-source SDK and is not officially affiliated with Kaufland. 
+> **Disclaimer**: This is a community-driven, open-source SDK and is not officially affiliated with Kaufland.
+>
+> This project is an unofficial community SDK for the Kaufland Seller API.
+> It is not affiliated with, endorsed by, or maintained by Kaufland or Schwarz Gruppe.
+>
+> All trademarks and product names belong to their respective owners.
+
+## Why This SDK?
+
+Integrating directly with the Kaufland Seller API requires handling request signing, rate limits, retries, and HTTP error handling.
+
+This SDK abstracts those complexities and provides a clean, strongly typed .NET interface so developers can focus on business logic instead of API plumbing.
+
+## Offical Kaufland Documentation link
+https://sellerapi.kaufland.com/
 
 ## ✨ Key Features
 
@@ -138,3 +152,21 @@ Contributions, issues, and feature requests are always welcome!
 ## ⚖️ License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+
+## Support & Consultation
+
+### Community Support
+
+For bugs, feature requests, or general questions:
+
+- Open a GitHub Issue
+- Start a Discussion
+
+### Professional Support
+
+If you need help integrating Kaufland Seller API into your system or require custom development, consultation services may be available.
+
+Please contact:
+
+📧 arvind.maurya@gmail.com
