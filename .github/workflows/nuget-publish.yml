@@ -37,7 +37,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.nuGetVersion }}
+        run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.SemVer }}
 
       - name: Pack Kaufland.SellerApi.Extensions.DependencyInjection
         run: |
@@ -46,7 +46,7 @@ jobs:
             --no-build \
             --no-restore \
             --output ./artifacts/nupkg \
-            /p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersion }}
+            /p:PackageVersion=${{ steps.gitversion.outputs.SemVer }}
 
       - name: NuGet login (OIDC → temp API key)
         uses: NuGet/login@v1
