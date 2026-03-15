@@ -2,7 +2,7 @@ name: NuGet Pack & Publish
 
 on:
   push:
-    branches: ["main","feature/nuget_package_publishing"]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:

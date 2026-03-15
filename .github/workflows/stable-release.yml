@@ -1,0 +1,83 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  create-tag:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    outputs:
+      version: ${{ steps.gitversion.outputs.MajorMinorPatch }}
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: gittools/actions/gitversion/setup@v4.3.3
+        with:
+          versionSpec: 6.x
+
+      - id: gitversion
+        uses: gittools/actions/gitversion/execute@v4.3.3
+
+      - name: Create tag
+        run: |
+          VERSION=${{ steps.gitversion.outputs.MajorMinorPatch }}
+          git tag v$VERSION
+          git push origin v$VERSION
+
+  publish:
+    needs: create-tag
+    runs-on: ubuntu-latest
+    environment: Production
+
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build -c Release --no-restore
+
+      - name: Pack
+        run: |
+          VERSION=${{ needs.create-tag.outputs.version }}
+          dotnet pack \
+            --configuration Release \
+            --no-build \
+            --output ./artifacts \
+            /p:PackageVersion=$VERSION
+
+      - name: NuGet login
+        uses: NuGet/login@v1
+        id: login
+        with:
+          # user: ${{ secrets.NUGET_USER }}
+          user: arivndmaurya37
+
+      - name: Publish NuGet
+        run: |
+          dotnet nuget push "./artifacts/*.nupkg" \
+            --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.create-tag.outputs.version }}

@@ -1,0 +1,26 @@
+mode: ContinuousDelivery
+
+tag-prefix: '[vV]'
+
+branches:
+
+  main:
+    regex: ^main$
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    tag: ''
+
+  feature:
+    regex: ^feature(s)?[/-]
+    increment: Minor
+    tag: alpha
+
+  hotfix:
+    regex: ^hotfix(es)?[/-]
+    increment: Patch
+    tag: beta
+
+  pull-request:
+    regex: ^(pull|pr)[/-]
+    increment: Patch
+    tag: pr
