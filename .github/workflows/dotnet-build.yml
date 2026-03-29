@@ -50,3 +50,27 @@ jobs:
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Pack
+      run: |
+        VERSION=${{ steps.gitversion.outputs.majorMinorPatch }}
+        dotnet pack \
+          --configuration Release \
+          --no-build \
+          --output ./artifacts \
+          /p:PackageVersion=$VERSION
+    # ✅ Upload build artifacts
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-output
+        path: ./build-output
+    
+    # ✅ Upload NuGet packages
+    - name: Upload nuget packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget-packages
+        path: ./artifacts
+    
+          
