@@ -19,8 +19,7 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<!--<PackageLicenseExpression>MIT</PackageLicenseExpression>-->
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 </Project>
