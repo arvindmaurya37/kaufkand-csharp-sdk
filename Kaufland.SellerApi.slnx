@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/.github/Workflow/">
+    <File Path=".github/workflows/dotnet-build.yml" />
+    <File Path=".github/workflows/nuget-publishold" />
+    <File Path=".github/workflows/stable-release.yml" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
     <File Path="dotnet-tools.json" />

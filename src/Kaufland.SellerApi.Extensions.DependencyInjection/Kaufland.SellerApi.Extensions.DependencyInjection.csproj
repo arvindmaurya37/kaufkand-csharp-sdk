@@ -8,6 +8,10 @@
 		<PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="8.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
 	<PropertyGroup>
 		<PackageVersion>1.0.0</PackageVersion>
 		<TargetFramework>net8.0</TargetFramework>
@@ -15,9 +19,12 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<PropertyGroup>
+		<IsPackable>true</IsPackable>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 </Project>
