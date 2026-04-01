@@ -33,7 +33,7 @@ https://sellerapi.kaufland.com/
 
 ---
 
-## 📦 Installation FIX installation steps before making public.
+## 📦 Installation Steps.
 
 Install via NuGet Package Manager Console:
 ```powershell
