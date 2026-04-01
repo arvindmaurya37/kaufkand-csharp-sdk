@@ -1,13 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<ItemGroup>
-		<ProjectReference Include="..\Kaufland.SellerApi.Core\Kaufland.SellerApi.Core.csproj" />
+		<ProjectReference Include="..\Kaufland.SellerApi.Core\Kaufland.SellerApi.Core.csproj">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</ProjectReference>
 	</ItemGroup>
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="Kaufland.SellerApi.Extensions.DependencyInjection" />
 		<InternalsVisibleTo Include="Kaufland.SellerApi.Tests" />
 		<InternalsVisibleTo Include="Kaufland.SellerApi.IntegrationTests" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
 	</ItemGroup>
 
 	<PropertyGroup>

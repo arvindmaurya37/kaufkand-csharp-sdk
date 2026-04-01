@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Kaufland.SellerApi.Core\Kaufland.SellerApi.Core.csproj" />
     <ProjectReference Include="..\..\src\Kaufland.SellerApi.Extensions.DependencyInjection\Kaufland.SellerApi.Extensions.DependencyInjection.csproj" />
   </ItemGroup>
 

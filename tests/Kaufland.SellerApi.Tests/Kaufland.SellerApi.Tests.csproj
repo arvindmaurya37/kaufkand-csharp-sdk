@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Kaufland.SellerApi.Core\Kaufland.SellerApi.Core.csproj" />
     <ProjectReference Include="..\..\src\Kaufland.SellerApi\Kaufland.SellerApi.csproj" />
   </ItemGroup>
 

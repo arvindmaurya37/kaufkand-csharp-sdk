@@ -1,8 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<ItemGroup>
-		<ProjectReference Include="..\Kaufland.SellerApi\Kaufland.SellerApi.csproj" />
+		<ProjectReference Include="..\Kaufland.SellerApi.Core\Kaufland.SellerApi.Core.csproj">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</ProjectReference>
+		<ProjectReference Include="..\Kaufland.SellerApi\Kaufland.SellerApi.csproj">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</ProjectReference>
 	</ItemGroup>
+
+	<Target Name="AddTransitiveDllsToPackage" BeforeTargets="_GetPackageFiles">
+		<ItemGroup>
+			<!-- Grab all DLLs from the build output (includes transitive deps) -->
+			<_TransitiveDlls Include="$(OutputPath)*.dll"
+							 Exclude="$(OutputPath)$(AssemblyName).dll" />
+			<None Include="@(_TransitiveDlls)">
+				<Pack>true</Pack>
+				<PackagePath>lib\$(TargetFramework)</PackagePath>
+			</None>
+		</ItemGroup>
+	</Target>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="8.0.0" />
