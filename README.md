@@ -37,17 +37,13 @@ https://sellerapi.kaufland.com/
 
 Install via NuGet Package Manager Console:
 ```powershell
-Install-Package Kaufland.SellerApi
 Install-Package Kaufland.SellerApi.Extensions.DependencyInjection
 ```
 
 Or via the .NET CLI:
 ```bash
-dotnet add package Kaufland.SellerApi
 dotnet add package Kaufland.SellerApi.Extensions.DependencyInjection
 ```
-
-> *Note: Depending exactly how the packages are hosted, modify the names appropriately.*
 
 ---
 
